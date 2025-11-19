@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 217 33% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+
+    /* Azul marinho escuro - cor principal */
+    --primary: 217 91% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Amarelo ouro - destaque */
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 217 33% 17%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Verde - ações positivas */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Vermelho - ações destrutivas */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 20%;
+
+    --radius: 1rem;
+
+    /* Elementos decorativos */
+    --gold: 45 93% 58%;
+    --red-accent: 0 84% 60%;
+    --green-accent: 142 76% 36%;
+    --blue-light: 199 89% 48%;
+
+    --sidebar-background: 217 91% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 93% 58%;
+    --sidebar-primary-foreground: 217 33% 17%;
+    --sidebar-accent: 217 91% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 91% 25%;
+    --sidebar-ring: 45 93% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
