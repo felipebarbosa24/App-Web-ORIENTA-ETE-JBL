@@ -20,24 +20,28 @@ export default function Dashboard() {
       {/* Banner Carousel */}
       <div className="mb-6 overflow-x-auto">
         <div className="flex gap-4 pb-2">
-          <Card className="min-w-[280px] bg-gradient-to-r from-primary to-accent border-0 text-primary-foreground">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-2">Interclasse 2025</h3>
-              <p className="text-sm opacity-90 mb-4">Venha participar do evento esportivo do ano!</p>
-              <Button variant="secondary" size="sm">
-                Saber mais
-              </Button>
-            </CardContent>
-          </Card>
-          <Card className="min-w-[280px] bg-gradient-to-r from-secondary to-gold border-0">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-foreground">ENEM 2025</h3>
-              <p className="text-sm text-muted-foreground mb-4">Prepare-se com nossos planos de estudo</p>
-              <Button variant="outline" size="sm">
-                Ver planos
-              </Button>
-            </CardContent>
-          </Card>
+          <Link to="/schedule" className="block min-w-[280px]">
+            <Card className="min-w-[280px] bg-gradient-to-r from-primary to-accent border-0 text-primary-foreground h-full">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">Horário Escolar</h3>
+                <p className="text-sm opacity-90 mb-4">Confira o horário de suas aulas e atividades</p>
+                <Button variant="secondary" size="sm">
+                  Ver horários
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link to="/study-plan" className="block min-w-[280px]">
+            <Card className="min-w-[280px] bg-gradient-to-r from-secondary to-gold border-0 h-full">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-foreground">ENEM 2025</h3>
+                <p className="text-sm text-muted-foreground mb-4">Prepare-se com nossos planos de estudo</p>
+                <Button variant="outline" size="sm">
+                  Ver planos
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </div>
 
