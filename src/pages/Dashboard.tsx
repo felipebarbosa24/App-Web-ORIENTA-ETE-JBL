@@ -48,26 +48,30 @@ export default function Dashboard() {
       {/* Quick Access Cards */}
       <div className="space-y-6">
         <Link to="/vocational" className="block">
-          <Card className="border-0 bg-gradient-to-br from-accent to-blue-light text-accent-foreground hover:shadow-lg transition-shadow">
+          <Card className="group relative overflow-hidden rounded-lg border-0 bg-gradient-to-br from-accent to-blue-light text-accent-foreground shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
             <CardContent className="p-6">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold mb-2">Descubra seu Caminho com a IA da Orienta</h3>
+                  <h3 className="text-lg font-bold mb-2">Descubra seu Caminho com a IA da ORIENTA</h3>
                   <p className="text-sm opacity-90">Orientação vocacional personalizada</p>
                 </div>
                 <img src={robotAi} alt="AI Robot" className="w-20 h-20 object-contain flex-shrink-0" />
               </div>
-              <ChevronRight className="h-5 w-5 mt-2" />
+              <div className="absolute bottom-4 right-4 rounded-full bg-background/20 p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <ChevronRight className="h-5 w-5 text-accent-foreground" />
+              </div>
             </CardContent>
           </Card>
         </Link>
 
         <Link to="/study-plan" className="block">
-          <Card className="border-0 bg-secondary text-secondary-foreground hover:shadow-lg transition-shadow">
+          <Card className="group relative overflow-hidden rounded-lg border-0 bg-secondary text-secondary-foreground shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
             <CardContent className="p-6">
               <h3 className="text-xl font-bold mb-2">Plano de Estudo</h3>
               <p className="text-sm opacity-90">Organize seus estudos e alcance seus objetivos</p>
-              <ChevronRight className="h-5 w-5 mt-2" />
+              <div className="absolute bottom-4 right-4 rounded-full bg-background/20 p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <ChevronRight className="h-5 w-5 text-secondary-foreground" />
+              </div>
             </CardContent>
           </Card>
         </Link>
