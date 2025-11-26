@@ -28,7 +28,7 @@ const notifications = [
     description: "Revisar conteúdo de Física para prova",
     time: "1 dia atrás",
     color: "text-secondary",
-    route: "/lembrete-estudo",           // <-- coloque a rota da página REAL
+    route: "/physical",           // <-- coloque a rota da página REAL
   },
   {
     id: 4,
