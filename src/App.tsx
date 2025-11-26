@@ -13,6 +13,7 @@ import Courses from "./pages/Courses";
 import Mural from "./pages/Mural";
 import Schedule from "./pages/Schedule";
 import NotFound from "./pages/NotFound";
+import Menu from "./pages/Menu";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/courses" element={<Layout><Courses /></Layout>} />
           <Route path="/mural" element={<Layout><Mural /></Layout>} />
           <Route path="/schedule" element={<Layout><Schedule /></Layout>} />
+          <Route path="/menu" element={<Layout><Menu /></Layout>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
