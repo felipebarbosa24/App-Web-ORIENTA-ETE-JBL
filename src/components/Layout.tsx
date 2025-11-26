@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
       <header className="sticky top-0 z-50 w-full bg-primary shadow-md">
         <div className="container flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Orienta Logo" className="h-12 w-12" />
+            <img src={logo} alt="Orienta Logo" className="h-12 w-12 rounded-full" />
             <span className="text-2xl font-bold text-primary-foreground">ORIENTA</span>
           </Link>
           
