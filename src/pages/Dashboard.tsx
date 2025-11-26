@@ -1,4 +1,4 @@
-import { Plus, ChevronRight, Calendar, BookOpen } from "lucide-react";
+import { Plus, ChevronRight, Calendar, BookOpen, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,24 +20,28 @@ export default function Dashboard() {
       {/* Banner Carousel */}
       <div className="mb-6 overflow-x-auto">
         <div className="flex gap-4 pb-2">
-          <Link to="/schedule" className="block min-w-[280px]">
-            <Card className="min-w-[280px] bg-gradient-to-r from-primary to-accent border-0 text-primary-foreground h-full">
-              <CardContent className="p-6">
+          <Link to="/schedule" className="block min-w-[280px] group">
+            <Card className="min-w-[280px] bg-gradient-to-r from-primary to-accent border-0 text-primary-foreground h-full shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+              <CardContent className="p-6 flex flex-col justify-between h-full">
                 <h3 className="text-xl font-bold mb-2">Horário Escolar</h3>
                 <p className="text-sm opacity-90 mb-4">Confira o horário de suas aulas e atividades</p>
-                <Button variant="secondary" size="sm">
+                <Button variant="secondary" size="sm" className="self-start group/button">
                   Ver horários
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover/button:translate-x-1" />
                 </Button>
               </CardContent>
             </Card>
           </Link>
-          <Link to="/study-plan" className="block min-w-[280px]">
-            <Card className="min-w-[280px] bg-gradient-to-r from-secondary to-gold border-0 h-full">
-              <CardContent className="p-6">
+          <Link to="/study-plan" className="block min-w-[280px] group flex">
+            <Card className="flex-1 bg-gradient-to-r from-secondary to-gold border-0 shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+              <CardContent className="p-6 flex flex-col justify-between h-full">
+                <div>
                 <h3 className="text-xl font-bold mb-2 text-foreground">ENEM 2025</h3>
                 <p className="text-sm text-muted-foreground mb-4">Prepare-se com nossos planos de estudo</p>
-                <Button variant="outline" size="sm">
+                </div>
+                <Button variant="outline" size="sm" className="self-start bg-background/20 border-foreground/30 text-foreground hover:bg-background/40 group-hover:bg-background/40">
                   Ver planos
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </CardContent>
             </Card>
@@ -94,7 +98,7 @@ export default function Dashboard() {
             <Card className="group relative overflow-hidden rounded-lg border-0 bg-primary text-primary-foreground shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full">
               <CardContent className="p-6 flex flex-col justify-between h-full">
                 <div>
-                  <BookOpen className="h-8 w-8 mb-3 opacity-80"/>
+                  <BookOpen className="h-8 w-8 mb-3 opacity-80" />
                   <h3 className="text-lg font-bold mb-1">Cursos</h3>
                   <p className="text-sm opacity-90">SISU e universidades</p>
                 </div>
