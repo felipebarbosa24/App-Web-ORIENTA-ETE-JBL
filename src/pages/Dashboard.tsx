@@ -1,4 +1,4 @@
-import { Plus, ChevronRight } from "lucide-react";
+import { Plus, ChevronRight, Calendar, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -78,21 +78,27 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-2 gap-4">
           <Link to="/mural" className="block">
-            <Card className="border-0 bg-accent text-accent-foreground hover:shadow-lg transition-shadow h-full">
-              <CardContent className="p-4">
-                <h3 className="text-base font-bold mb-1">Mural Escolar</h3>
-                <p className="text-xs opacity-90">Eventos e novidades</p>
-                <ChevronRight className="h-4 w-4 mt-2" />
+            <Card className="group relative overflow-hidden rounded-lg border-0 bg-accent text-accent-foreground shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full">
+              <CardContent className="p-6 flex flex-col justify-between h-full">
+                <div>
+                  <Calendar className="h-8 w-8 mb-3 opacity-80" />
+                  <h3 className="text-lg font-bold mb-1">Mural Escolar</h3>
+                  <p className="text-sm opacity-90">Eventos e novidades</p>
+                </div>
+                <ChevronRight className="h-5 w-5 absolute bottom-4 right-4 transition-transform duration-300 group-hover:translate-x-1" />
               </CardContent>
             </Card>
           </Link>
 
-          <Link to="/courses" className="block">
-            <Card className="border-0 bg-primary text-primary-foreground hover:shadow-lg transition-shadow h-full">
-              <CardContent className="p-4">
-                <h3 className="text-base font-bold mb-1">Cursos</h3>
-                <p className="text-xs opacity-90">SISU e universidades</p>
-                <ChevronRight className="h-4 w-4 mt-2" />
+          <Link to="/courses" className="block h-full">
+            <Card className="group relative overflow-hidden rounded-lg border-0 bg-primary text-primary-foreground shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full">
+              <CardContent className="p-6 flex flex-col justify-between h-full">
+                <div>
+                  <BookOpen className="h-8 w-8 mb-3 opacity-80"/>
+                  <h3 className="text-lg font-bold mb-1">Cursos</h3>
+                  <p className="text-sm opacity-90">SISU e universidades</p>
+                </div>
+                <ChevronRight className="h-5 w-5 absolute bottom-4 right-4 transition-transform duration-300 group-hover:translate-x-1" />
               </CardContent>
             </Card>
           </Link>
