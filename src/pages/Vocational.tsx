@@ -29,11 +29,10 @@ export default function Vocational() {
         <p className="text-muted-foreground mb-6">
           Use a inteligência artificial para explorar carreiras, entender suas aptidões e planejar seu futuro profissional.
         </p>
-        <Button 
-          size="lg" 
-          className="w-full max-w-xs bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg font-bold py-6"
-        >
-          Começar agora! 🚀
+        <Button asChild size="lg" className="w-full max-w-xs bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg font-bold py-6 shadow-md hover:shadow-lg transition-shadow">
+          <a href="https://chatgpt.com/g/g-680a6fe5bb0c8191976a7abc4fbf5b54-orienta-ai" target="_blank" rel="noopener noreferrer">
+            Começar agora! 🚀
+          </a>
         </Button>
       </div>
 
@@ -41,16 +40,24 @@ export default function Vocational() {
       <div className="mb-8">
         <h2 className="text-lg font-semibold text-foreground mb-4">Perguntas sugeridas</h2>
         <div className="space-y-3">
-          {prompts.map((prompt, index) => (
-            <Card 
-              key={index}
-              className="hover:shadow-md transition-shadow cursor-pointer border-0 bg-card"
-            >
-              <CardContent className="p-4">
-                <p className="text-sm text-foreground">{prompt}</p>
-              </CardContent>
-            </Card>
-          ))}
+          {prompts.map((prompt, index) => {
+            const isRightAligned = index % 2 !== 0;
+            return (
+              <div key={index} className={`flex ${isRightAligned ? 'justify-end' : 'justify-start'}`}>
+                <Card
+                  className={`max-w-[80%] rounded-2xl shadow-md transition-shadow cursor-pointer ${
+                    isRightAligned
+                      ? 'bg-[#052861] text-white'
+                      : 'bg-card text-foreground'
+                  }`}
+                >
+                  <CardContent className="p-3">
+                    <p className="text-sm">{prompt}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </div>
 
