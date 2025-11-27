@@ -1,6 +1,7 @@
-import { Search } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const courses = [
@@ -109,6 +110,13 @@ export default function Courses() {
           </div>
         </CardContent>
       </Card>
+
+      {/* External Link Button */}
+      <Button asChild className="w-full mt-6 group">
+        <a href="https://projeto-orienta.vercel.app/notas-de-corte-enem" target="_blank" rel="noopener noreferrer">Saiba mais em nosso site
+          <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+        </a>
+      </Button>
     </div>
   );
 }
