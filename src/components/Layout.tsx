@@ -1,6 +1,18 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Bell, User, Menu } from "lucide-react";
+import {
+  Home,
+  Bell,
+  User,
+  Menu,
+  LayoutDashboard,
+  CalendarDays,
+  BookText,
+  Briefcase,
+  GraduationCap,
+  LogOut,
+  HelpCircle,
+} from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-orienta.png";
@@ -16,11 +28,11 @@ const navItems = [
 ];
 
 const menuItems = [
-  { path: "/notifications", icon: Bell, label: "Notificações" },
-  { path: "/mural", icon: Home, label: "Mural escolar" },
-  { path: "/schedule", icon: Home, label: "Horário" },
-  { path: "/study-plan", icon: Home, label: "Plano de Estudos" },
-  { path: "/vocational", icon: Home, label: "Teste Vocacional" },
+  { path: "/mural", icon: LayoutDashboard, label: "Mural escolar" },
+  { path: "/schedule", icon: CalendarDays, label: "Horário" },
+  { path: "/study-plan", icon: BookText, label: "Plano de Estudos" },
+  { path: "/vocational", icon: Briefcase, label: "Teste Vocacional" },
+  { path: "/courses", icon: GraduationCap, label: "Notas de Corte" },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -55,11 +67,14 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 ))}
                 <div className="border-t border-sidebar-border my-2" />
-                <button className="flex items-center gap-3 text-destructive hover:text-destructive/90 transition-colors px-4 py-2 rounded-lg">
-                  <span className="font-medium">Sair</span>
-                </button>
-                <button className="flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-colors px-4 py-2 rounded-lg">
+                <a href="https://projeto-orienta.vercel.app/duvidas" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sidebar-foreground hover:text-sidebar-primary transition-colors px-4 py-2 rounded-lg">
+                  <HelpCircle className="h-5 w-5"/>
                   <span className="font-medium">Ajuda</span>
+                </a>
+                <button className="flex items-center gap-3 text-destructive hover:text-destructive/80 transition-colors px-4 py-2 rounded-lg">
+                  <LogOut className="h-5 w-5" />
+                  <span className="font-medium">Sair</span>
                 </button>
               </nav>
             </SheetContent>
