@@ -72,10 +72,12 @@ export default function StudyPlan() {
                   <h3 className="font-bold text-lg text-foreground mb-1">{plan.name}</h3>
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
                 </div>
-                <Button size="sm" className="bg-success hover:bg-success/90 flex-shrink-0">
-                  Verificar
-                  <ChevronRight className="h-4 w-4 ml-1" />
-                </Button>
+                <a href="https://projeto-orienta.vercel.app/plano-de-estudos" target="_blank" rel="noopener noreferrer">
+                  <Button size="sm" className="bg-success hover:bg-success/90 flex-shrink-0">
+                    Verificar
+                    <ChevronRight className="h-4 w-4 ml-1" />
+                  </Button>
+                </a>
               </div>
             </CardContent>
           </Card>
