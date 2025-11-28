@@ -38,14 +38,16 @@ export default function Profile() {
           </div>
 
           {/* Logout Button */}
-          <Button 
-            variant="destructive" 
-            className="w-full" 
-            size="lg"
-          >
-            <LogOut className="h-5 w-5 mr-2" />
-            Sair da Conta
-          </Button>
+          <Link to="/" className="block w-full">
+            <Button 
+              variant="destructive" 
+              className="w-full" 
+              size="lg"
+            >
+              <LogOut className="h-5 w-5 mr-2" />
+              Sair da Conta
+            </Button>
+          </Link>
         </CardContent>
       </Card>
 
