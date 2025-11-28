@@ -1,11 +1,26 @@
 // src/pages/Physical.tsx
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Atom, Clock } from "lucide-react";
+import { BookOpen, Atom, Clock, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Physical() {
+  const navigate = useNavigate();
+
   return (
     <div className="container px-4 py-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold text-foreground mb-6">Estudos de Física</h1>
+
+      {/* Botão de voltar */}
+      <button
+        onClick={() => navigate("/notifications")}
+        className="flex items-center text-sm text-primary mb-4"
+      >
+        <ArrowLeft className="h-5 w-5 mr-1" />
+        Voltar
+      </button>
+
+      <h1 className="text-2xl font-bold text-foreground mb-6">
+        Estudos de Física
+      </h1>
 
       <Card className="mb-6 shadow-sm">
         <CardContent className="p-4">
