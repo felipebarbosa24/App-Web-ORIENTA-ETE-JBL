@@ -19,7 +19,7 @@ const notifications = [
     description: "Matemática - Trigonometria avançada",
     time: "5 horas atrás",
     color: "text-primary",
-    route: "/nova-aula",                 // <-- coloque a rota da página REAL
+    route: "/trigonometry",                 // <-- coloque a rota da página REAL
   },
   {
     id: 3,
