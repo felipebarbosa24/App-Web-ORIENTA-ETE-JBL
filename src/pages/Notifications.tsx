@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Bell, Calendar, BookOpen, AlertCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const notifications = [
   {
@@ -9,6 +10,7 @@ const notifications = [
     description: "Inscrições abertas até sexta-feira",
     time: "2 horas atrás",
     color: "text-accent",
+    route: "/mural",          // <-- coloque aqui a rota da página REAL
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const notifications = [
     description: "Matemática - Trigonometria avançada",
     time: "5 horas atrás",
     color: "text-primary",
+    route: "/trigonometry",                 // <-- coloque a rota da página REAL
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ const notifications = [
     description: "Revisar conteúdo de Física para prova",
     time: "1 dia atrás",
     color: "text-secondary",
+    route: "/physical",           // <-- coloque a rota da página REAL
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const notifications = [
     description: "Mudança no horário de quinta-feira",
     time: "2 dias atrás",
     color: "text-success",
+    route: "/schedule",                  // <-- AQUI você disse que é "Schedule.tsk"
   },
 ];
 
@@ -43,31 +48,34 @@ export default function Notifications() {
 
       <div className="space-y-4">
         {notifications.map((notification) => (
-          <Card key={notification.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-4">
-              <div className="flex gap-4">
-                <div className={`flex-shrink-0 ${notification.color}`}>
-                  <notification.icon className="h-6 w-6" />
+          <Link
+            key={notification.id}
+            to={notification.route}              // <-- AQUI ELE USA A ROTA
+            className="block"
+          >
+            <Card className="hover:shadow-md transition-shadow cursor-pointer">
+              <CardContent className="p-4">
+                <div className="flex gap-4">
+                  <div className={`flex-shrink-0 ${notification.color}`}>
+                    <notification.icon className="h-6 w-6" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-foreground mb-1">
+                      {notification.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {notification.description}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {notification.time}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-foreground mb-1">{notification.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{notification.description}</p>
-                  <p className="text-xs text-muted-foreground">{notification.time}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
-
-      {/* Empty state for when there are no notifications */}
-      {notifications.length === 0 && (
-        <div className="flex flex-col items-center justify-center py-12 text-center">
-          <Bell className="h-16 w-16 text-muted-foreground mb-4" />
-          <h3 className="text-lg font-semibold text-foreground mb-2">Nenhuma notificação</h3>
-          <p className="text-sm text-muted-foreground">Você está em dia com tudo!</p>
-        </div>
-      )}
     </div>
   );
 }
