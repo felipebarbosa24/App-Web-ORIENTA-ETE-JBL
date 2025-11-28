@@ -1,7 +1,7 @@
 import { LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
@@ -13,10 +13,11 @@ export default function Profile() {
         <CardContent className="p-8 flex flex-col items-center">
           {/* Profile Photo */}
           <Avatar className="h-32 w-32 mb-4 border-4 border-primary">
-            <AvatarFallback className="text-3xl font-bold bg-secondary text-secondary-foreground">
-              FH
-            </AvatarFallback>
-          </Avatar>
+              <AvatarImage src="src/assets/profile-photo.png"/>
+              <AvatarFallback className="text-3xl font-bold bg-secondary text-secondary-foreground">
+                FH
+              </AvatarFallback>
+            </Avatar>
 
           {/* Name and Class */}
           <h2 className="text-2xl font-bold text-foreground mb-1">Fernando Henrique Cardoso</h2>
