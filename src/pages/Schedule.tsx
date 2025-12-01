@@ -82,8 +82,8 @@ export default function Schedule() {
     if (!scheduleRef.current || !turmaSelecionada) return;
     const element = scheduleRef.current;
     const canvas = await html2canvas(element, { scale: 2 });
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF({ orientation: "landscape", unit: "pt", format: "a4" });
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = pdf.internal.pageSize.getHeight();
     const imgWidth = canvas.width;
@@ -93,7 +93,7 @@ export default function Schedule() {
     const imgPropsHeight = imgHeight * ratio;
     const marginX = (pdfWidth - imgPropsWidth) / 2;
     const marginY = (pdfHeight - imgPropsHeight) / 2;
-    pdf.addImage(imgData, 'PNG', marginX, marginY, imgPropsWidth, imgPropsHeight);
+    pdf.addImage(imgData, "PNG", marginX, marginY, imgPropsWidth, imgPropsHeight);
     pdf.save(`${turmaSelecionada}_horario.pdf`);
   }
 
